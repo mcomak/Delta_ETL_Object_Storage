@@ -57,22 +57,30 @@ https://www.kaggle.com/datasets/tmdb/tmdb-movie-metadata?select=tmdb_5000_movies
 from terminal:
 
 `sudo systemctl start docker`
+
 `cd /<location_of_docker_compose.yaml>/ && docker-compose up -d `
+
 `docker start minio`
+
 `sudo systemctl start airflow`
+
 `sudo systemctl start airflow-sheduler`
+
 
 ### Download data:
 
 `wget -O /<location_of_source_file> https://github.com/mcomak/datasets/tree/master/tmdb_5000_movies_and_credits`
+
 `unzip tmdb_5000_movies_and_credits.zip`
 
 ### Create Bronze and Silver buckets
 
 open http://localhost:9001/dashboard from web browser to reach minio dashboard
 
-Minio Login
+**Minio Login**
+
 username: root
+
 password: root12345
 
 From left menu click Buckets -> Create Bucket, type the bucket name as `tmdb-bronze` and save
@@ -119,7 +127,7 @@ Highlights from Delta_Ops Module:
 Spark should handshake with Delta and S3. Therefore, during creating a Spark Session required configs suppose to be like that
 ![img_4.png](readme_images/img_4.png)
 
-By adding related jar packages from Maven repository, spark can be reached and Deltalake and Minio.
+By adding related jar packages from Maven repository, spark can be reached Deltalake and Minio.
 ![img_1.png](readme_images/img_1.png)
 
 ### Airflow web UI
