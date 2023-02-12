@@ -64,7 +64,7 @@ from terminal:
 
 `sudo systemctl start airflow`
 
-`sudo systemctl start airflow-sheduler`
+`sudo systemctl start airflow-scheduler`
 
 
 ### Download data:
